@@ -81,7 +81,7 @@ module Schedulable
           rule = IceCube::Rule.send("#{self.rule}", self.interval)
 
           if self.until
-            rule.until(self.until)
+            rule.until(self.until+1.day)
           end
 
           if self.count && self.count.to_i > 0
