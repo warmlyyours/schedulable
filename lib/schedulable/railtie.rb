@@ -5,8 +5,8 @@ module Schedulable
     
     railtie_name :schedulable
     
-    # requires all dependencies
-    Gem.loaded_specs['schedulable'].dependencies.each do |d|
+    # requires only runtime dependencies
+    Gem.loaded_specs['schedulable'].runtime_dependencies.each do |d|
      require d.name
     end
     
